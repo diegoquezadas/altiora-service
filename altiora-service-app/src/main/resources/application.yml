@@ -1,0 +1,36 @@
+server:
+  port: 9000
+  address: 0.0.0.0 # Aceptar conexiones desde todas las interfaces de red
+
+spring:
+  #datasource:
+    #Prod
+    #url: jdbc:postgresql://localhost:5432/altiora
+    #username: postgres
+    #password: postgres
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        #dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  file:
+    #docker
+    #path: /app/logs/application.log
+    #test
+    path: /Users/diegoquezada/Documents/registro/certificados/logs/application.log
+  level:
+    root: INFO
+    "[org.springframework.web]": INFO
+    "[com.altiora_service_app]": INFO
+app:
+  jwtSecret: mtopseguridad
+  jwtExpirationMs: 900000
+
