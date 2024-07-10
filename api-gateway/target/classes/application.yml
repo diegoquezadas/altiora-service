@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway
+
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.boot.autoconfigure.web: DEBUG
